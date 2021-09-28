@@ -1,4 +1,8 @@
-# Python
+<h1 style="text-align: center"><b>Introduction to Python</b></h1>
+
+<div align="center">   
+    <img title="Python TreviIT" alt="Python" src="./python_TreviIT.png" width=50%>
+</div>
 
  - Python is one of the most widely used programming languages in industry. It's a powerful, general purpose language with applications ranging from web development to data science. In this course you'll learn how to apply Python and good programming practices to solve practical problems.
 
