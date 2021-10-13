@@ -19,3 +19,24 @@
 # for i in range(1,3):
 #     print("I'm Python")    
 
+# for i in range(5):
+#     print('#' * 9)
+    
+
+# scores = []
+# for i in range(3):
+#     score = input('Score: ')
+#     scores.append(score)
+
+# average = sum(scores) / len(scores)
+# print(f'Average: {average}')
+
+# people = {
+#     'Carter': '+1-617-495-1000',
+#     'David': '+1-617-485-1504'
+# }
+
+# name = input('Name: ')
+# if name in people:
+#     number = people[name]
+#     print(f'Number: {number}')
