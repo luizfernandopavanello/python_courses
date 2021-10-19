@@ -26,3 +26,5 @@ You might get a response that the Python version installed is something like Pyt
 If instead the version number starts with a 3, then you already have Python 3 installed! Don't install Python again!
 
 Alternatively, you might see an error message - don't worry about that for now, just try the steps in the next couple of sections.
+
+https://docs.python.org/3/library/
