@@ -6,7 +6,7 @@
 
  - Python is one of the most widely used programming languages in industry. It's a powerful, general purpose language with applications ranging from web development to data science. In this course you'll learn how to apply Python and good programming practices to solve practical problems.
 
- - Keep in mind: 
+ - `Keep in mind`: 
 
     - First, unlike languages like SQL, Python is case sensitive, meaning these two words mean two different things;
 
@@ -17,3 +17,7 @@
         
         Use error messages to help you learn how to write code that can be interpreted the way you wish. 
     
+
+- What steps need to be taken?
+- What should the user already have installed or configured?
+- What might they have a hard time understanding right away?
