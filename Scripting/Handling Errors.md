@@ -34,7 +34,7 @@ except ValueError:
 except KeyboardInterrupt:
     # some code
 
-Accessing Error Messages
+- Accessing Error Messages
 
 When you handle an exception, you can still access its error message like this:
 
