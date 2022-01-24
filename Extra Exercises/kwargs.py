@@ -1,6 +1,6 @@
-# **kwargs = parameter that will pack all the arguments into a dictionary;
-#                     usefull so that a function can accept a varying amount of keyword arguments.
-
+""" **kwargs = parameter that will pack all the arguments into a Dictionary;
+               usefull so that a function can accept a varying amount of keyword arguments.
+"""
 def hello(**kwargs):
     if 'name' in kwargs:
         print('Hello ' + kwargs['name'] + '!')
