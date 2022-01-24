@@ -9,5 +9,5 @@ print(f"The number is {number:.3f}")
 print(f"The number is {number:,}")
 print(f"The number is {number:b}") # binary
 print(f"The number is {number:o}") # octo
-print(f"The number is {number:X}") 
+print(f"The number is {number:X}")
 print(f"The number is {number:E}")
