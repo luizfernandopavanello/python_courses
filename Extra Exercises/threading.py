@@ -9,8 +9,10 @@
 # io bound = program/task spends most of its time waiting for external events
 #            (user input, web scraping) use multithreading
 
-import threading
 import time
+
+import threading
+
 
 def  eat_breakfast():
     time.sleep(3)

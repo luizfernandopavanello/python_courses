@@ -1,5 +1,4 @@
 import turtle
-import tkinter
 
 pen = turtle.Turtle()
 

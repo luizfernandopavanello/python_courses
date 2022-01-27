@@ -4,8 +4,10 @@
                   non-=daemon threads cannot normally be killed, stay alive until task is complete
 """
 
-import threading
 import time
+
+import threading
+
 
 def timer():
     print()

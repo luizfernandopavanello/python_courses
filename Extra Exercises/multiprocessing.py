@@ -6,8 +6,10 @@
                     better for io bound tasks(waiting around)
 """
 
-from multiprocessing import Process, cpu_count
 import time
+
+from multiprocessing import Process, cpu_count
+
 
 def counter(num):
     count = 0
