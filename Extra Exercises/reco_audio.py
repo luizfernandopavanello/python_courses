@@ -1,0 +1,12 @@
+import speech_recognition as sr
+
+rec = sr.Recognizer()
+
+# print(sr.Microphone().list_microphone_names())
+
+with sr.Microphone() as mic:
+    rec.adjust_for_ambient_noise(mic)
+    print('Listening...')
+    audio = rec.listen(mic)
+    phrase = rec.recognize_google(audio, language='pt-BR')
+    print(phrase)
