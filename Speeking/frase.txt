@@ -1,1 +1,0 @@
-Falando com o Python3 no Linux!
