@@ -1,21 +1,35 @@
+# Introdução aos conceitos de Segurança da Informação e Ping
+
 → Princípios da Segurança da informação
 
-- Integridade: Visa proteger a informação de alterações indevidas.
+	- Integridade: Visa proteger a informação de alterações indevidas.
 
-- Confidencialidade: Manter uma informação confidencial.
+	- Confidencialidade: Manter uma informação confidencial.
 
-- Disponibilidade: Garantir que um recurso e/ou informação esteja disponível.
+	- Disponibilidade: Garantir que um recurso e/ou informação esteja disponível.
 
-- Identificação: Identificar uma entidade.
-- Autentucação: Verificar a entidade e suas credenciais.
-- Autorização: Autorizar a entidade dentro de um sistema.
-- Não Repúdio: Evitar que uma entidade negue suas ações em um sistema.
-
+	- Identificação: Identificar uma entidade.
+	- Autentucação: Verificar a entidade e suas credenciais.
+	- Autorização: Autorizar a entidade dentro de um sistema.
+	- Não Repúdio: Evitar que uma entidade negue suas ações em um sistema.
 
 → ICMP Ping
 
-- ICMP (Internet Control Message Protocol), é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original.
+	- ICMP (Internet Control Message Protocol), é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original.
 
-- O ping é uma ferramenta que usa o protocolo ICMP para testar a conectividade entre nós. É um comando disponível praticamente em todos os sistemas operacionais que consiste no envio de pacotes para o equipamento de destino e na "escuta" das respostas.
+	- O ping é uma ferramenta que usa o protocolo ICMP para testar a conectividade entre nós. É um comando disponível praticamente em todos os sistemas operacionais que consiste no envio de pacotes para o equipamento de destino e na "escuta" das respostas.
 
+→ Introdução a Socket e cliente TCP/UDP e Server
+
+	- A biblioteca Socket fornece acesso de baixo nível à interface de rede;
+	- O S.O fornece a API socket que relaciona o programa com a rede.
+
+→ TCP
+
+	- O TCP (Transmission Control Protocol) ou Protocolo de Controle de Transmissão é um dos protocolos de comunicação, que dão suporte a rede global Internet, verificando se os dados são enviados na sequência correta e sem erros;
+	- Nosso programa verificará se dados são enviados de maneira integra.
+
+→ UDP
+
+	- O UDP (User Datagram Protocol) ou Protocolo de Datagrama de Usuário é um protocolo simples da camada de transporte que permite que a aplicação envie um datagrama dentro num pacote IPv4 ou IPv6 a um destino, porém sem qualquer tipo de garantia que o pacote chegue corretamente.
 
