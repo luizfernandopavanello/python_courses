@@ -1,5 +1,6 @@
 # Introdução aos conceitos de Segurança da Informação e Ping
 
+
 → Princípios da Segurança da informação
 
 	- Integridade: Visa proteger a informação de alterações indevidas.
@@ -13,23 +14,49 @@
 	- Autorização: Autorizar a entidade dentro de um sistema.
 	- Não Repúdio: Evitar que uma entidade negue suas ações em um sistema.
 
+
 → ICMP Ping
 
 	- ICMP (Internet Control Message Protocol), é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original.
 
 	- O ping é uma ferramenta que usa o protocolo ICMP para testar a conectividade entre nós. É um comando disponível praticamente em todos os sistemas operacionais que consiste no envio de pacotes para o equipamento de destino e na "escuta" das respostas.
 
+
 → Introdução a Socket e cliente TCP/UDP e Server
 
 	- A biblioteca Socket fornece acesso de baixo nível à interface de rede;
 	- O S.O fornece a API socket que relaciona o programa com a rede.
+
 
 → TCP
 
 	- O TCP (Transmission Control Protocol) ou Protocolo de Controle de Transmissão é um dos protocolos de comunicação, que dão suporte a rede global Internet, verificando se os dados são enviados na sequência correta e sem erros;
 	- Nosso programa verificará se dados são enviados de maneira integra.
 
+
 → UDP
 
 	- O UDP (User Datagram Protocol) ou Protocolo de Datagrama de Usuário é um protocolo simples da camada de transporte que permite que a aplicação envie um datagrama dentro num pacote IPv4 ou IPv6 a um destino, porém sem qualquer tipo de garantia que o pacote chegue corretamente.
 
+
+→ Desenvolvimento de Ferramentas
+
+	- O que é Biblioteca random?
+		- Implementa geradores de números pseudoaleatórios para várias distribuiçoões;
+		- Será utilizada no gerador de senhas para randomizar letras e números e a cada execução do programa gerar uma nova senha aleatória. (Autenticação / Condidencialidade)
+
+	- O que é um Hash?
+		- O hash é como se fosse um identificador único gerado através de um algoritimo que vai analisar byte a byte de determinado dado para gerar de forma única, um determinado código que só aquele arquivo terá. Se neste mesmo arquivo um único bit for alterado o hash gerado será diferente. (Integridade)		
+
+	- O que é a biblioteca hashlib?
+		- 
+
+	- O que Multithreading?
+		- 
+
+	- O que é a biblioteca threading?
+		- 
+
+	- O que a biblioteca ipaddress?
+		- 
+		
