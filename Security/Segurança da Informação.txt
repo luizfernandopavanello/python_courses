@@ -1,0 +1,21 @@
+→ Princípios da Segurança da informação
+
+- Integridade: Visa proteger a informação de alterações indevidas.
+
+- Confidencialidade: Manter uma informação confidencial.
+
+- Disponibilidade: Garantir que um recurso e/ou informação esteja disponível.
+
+- Identificação: Identificar uma entidade.
+- Autentucação: Verificar a entidade e suas credenciais.
+- Autorização: Autorizar a entidade dentro de um sistema.
+- Não Repúdio: Evitar que uma entidade negue suas ações em um sistema.
+
+
+→ ICMP Ping
+
+- ICMP (Internet Control Message Protocol), é um protocolo integrante do Protocolo IP utilizado para fornecer relatórios de erros à fonte original.
+
+- O ping é uma ferramenta que usa o protocolo ICMP para testar a conectividade entre nós. É um comando disponível praticamente em todos os sistemas operacionais que consiste no envio de pacotes para o equipamento de destino e na "escuta" das respostas.
+
+
