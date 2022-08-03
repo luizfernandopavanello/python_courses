@@ -43,20 +43,19 @@
 
 	- O que é Biblioteca random?
 		- Implementa geradores de números pseudoaleatórios para várias distribuiçoões;
-		- Será utilizada no gerador de senhas para randomizar letras e números e a cada execução do programa gerar uma nova senha aleatória. (Autenticação / Condidencialidade)
+		- Será utilizada no gerador de senhas para randomizar letras e números e a cada execução do programa gerar uma nova senha aleatória. (Autenticação / Condidencialidade).
 
 	- O que é um Hash?
-		- O hash é como se fosse um identificador único gerado através de um algoritimo que vai analisar byte a byte de determinado dado para gerar de forma única, um determinado código que só aquele arquivo terá. Se neste mesmo arquivo um único bit for alterado o hash gerado será diferente. (Integridade)		
+		- O hash é como se fosse um identificador único gerado através de um algoritimo que vai analisar byte a byte de determinado dado para gerar de forma única, um determinado código que só aquele arquivo terá. Se neste mesmo arquivo um único bit for alterado o hash gerado será diferente. (Integridade)
 
 	- O que é a biblioteca hashlib?
-		- 
+		- Implementa uma interface comum para muitos algoritmos de hash seguro como SHA1, SHA256, MD5 entre outros.
 
 	- O que Multithreading?
-		- 
+		- Thread é o processo e no ambiente multithread, cada processo pode responder a várias solicitações concorrentemente ou mesmo simultaneamente.
 
 	- O que é a biblioteca threading?
-		- 
+		- Constrói interfaces de alto nível para processamento usando o módulo Thread, de mais baixo nível, ou seja, relação direta com o processador.
 
 	- O que a biblioteca ipaddress?
-		- 
-		
+		- Tem a capacidade de criar, manipular endereços IP do tipo IPv4, IPv6 e até redes inteiras.
