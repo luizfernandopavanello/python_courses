@@ -79,4 +79,7 @@
 	- O que é a biblioteca phonenumbers?
 		- Fornece vários recursos, como informações básicas de um número de telefone, validação, etc.
 
+	- O que é a biblioteca ctypes?
+		- Fornece tipos de dados compatíveis com C e permite funcções de chamda em DLLs ou bibliotecas compatilhadas.
+
 	
