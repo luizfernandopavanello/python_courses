@@ -65,3 +65,11 @@
 
 	- O que é a biblioteca itertools?
 		- Fornece condições para iterações como permutação e combinação. Usamos esta biblioteca para gerar uma lista com vários caracteres diferentes e sem repetição de palavras.
+
+	- O é Web Scraping?
+		- Um web scraping é uma ferramenta de coleta de dados web, unma forma de mineração que permite a extração de dados de sites da web convertendo-os em informação estruturada para posterior análise.
+
+	- O que é a biblioteca BeautifulSoup?
+		- É uma biblioteca de estração de dados de arquivos HTML e XML.
+
+		
