@@ -64,6 +64,160 @@ app_logo = Label(frameCima, image=app_img, text=' Orçamento Pessoal', width=900
 app_logo.place(x=0, y=0)
 
 
+global tree
+
+
+def inserir():
+    global imagem,imagem_string, l_imagem
+    nome = e_nome.get()
+    local = e_local.get()
+    descricao = e_descricao.get()
+    model = e_model.get()
+    data = e_cal.get()
+    valor = e_valor.get()
+    serie = e_serial.get()
+    imagem = imagem_string
+
+    lista_inserir = [nome, local, descricao, model, data, valor, serie,imagem]
+
+    for i in lista_inserir:
+        if i=='':
+            messagebox.showerror('Erro', 'Preencha todos os campos')
+            return
+
+    inserir_form(lista_inserir)
+    messagebox.showinfo(
+        'Sucesso', 'Os dados foram inseridos com sucesso')
+
+    e_nome.delete(0, 'end')
+    e_local.delete(0, 'end')
+    e_descricao.delete(0, 'end')
+    e_model.delete(0, 'end')
+    e_cal.delete(0, 'end')
+    e_valor.delete(0, 'end')
+    e_serial.delete(0, 'end')
+
+    for widget in frameDireita.winfo_children():
+        widget.destroy()
+
+    mostrar()
+
+
+def atualizar():
+    try:
+        treev_dados = tree.focus()
+        treev_dicionario = tree.item(treev_dados)
+        treev_lista = treev_dicionario['values']
+        valor = treev_lista[0]
+
+        e_nome.delete(0, 'end')
+        e_local.delete(0, 'end')
+        e_descricao.delete(0, 'end')
+        e_model.delete(0, 'end')
+        e_cal.delete(0, 'end')
+        e_valor.delete(0, 'end')
+        e_serial.delete(0, 'end')
+
+        id = int(treev_lista[0])
+
+        e_nome.insert(0, treev_lista[1])
+        e_local.insert(0, treev_lista[2])
+        e_descricao.insert(0, treev_lista[3])
+        e_model.insert(0, treev_lista[4])
+        e_cal.insert(0, treev_lista[5])
+        e_valor.insert(0, treev_lista[6])
+        e_serial.insert(0, treev_lista[7])
+
+
+        def update():
+            global imagem,imagem_string, l_imagem
+            nome = e_nome.get()
+            local = e_local.get()
+            descricao = e_descricao.get()
+            model = e_model.get()
+            data = e_cal.get()
+            valor = e_valor.get()
+            serie = e_serial.get()
+            imagem = imagem_string
+
+            if imagem == '':
+                imagem = e_serial.insert(0, treev_lista[7])
+
+            lista_atualizar = [nome, local, descricao, model, data, valor, serie,imagem, id]
+
+            for i in lista_atualizar:
+                if i=='':
+                    messagebox.showerror('Erro', 'Preencha todos os campos')
+                    return
+
+            atualizar_form(lista_atualizar)
+
+            messagebox.showinfo('Sucesso', 'Os dados foram atualizados com sucesso')
+
+            e_nome.delete(0, 'end')
+            e_local.delete(0, 'end')
+            e_descricao.delete(0, 'end')
+            e_model.delete(0, 'end')
+            e_cal.delete(0, 'end')
+            e_valor.delete(0, 'end')
+            e_serial.delete(0, 'end')
+
+            botao_confirmar.destroy()
+
+            for widget in frameDireita.winfo_children():
+                widget.destroy()
+
+            mostrar()
+
+        botao_confirmar = Button(frameMeio, command=update, text="Confirmar".upper(), width=13, height=1, bg=co2, fg=co1,font=('ivy 8 bold'),relief=RAISED, overrelief=RIDGE)
+        botao_confirmar.place(x=330, y=185)
+
+
+    except IndexError:
+        messagebox.showerror('Erro', 'Seleciona um dos dados na tabela')
+
+
+def deletar():
+    try:
+        treev_dados = tree.focus()
+        treev_dicionario = tree.item(treev_dados)
+        treev_lista = treev_dicionario['values']
+        valor = treev_lista[0]
+
+        deletar_form([valor])
+
+        messagebox.showinfo('Sucesso', 'Os dados foram deletados com sucesso')
+
+        for widget in frameDireita.winfo_children():
+            widget.destroy()
+
+        mostrar()
+
+    except IndexError:
+        messagebox.showerror('Erro', 'Seleciona um dos dados na tabela')
+
+
+def ver_imagem():
+    global l_imagem, imagem, imagem_string
+
+    treev_dados = tree.focus()
+    treev_dicionario = tree.item(treev_dados)
+    treev_lista = treev_dicionario['values']
+    valor = [int(treev_lista[0])]
+
+    iten = ver_iten(valor)
+
+    imagem = iten[0][8]
+
+    # abrindo a imagem
+    imagem  = Image.open(imagem)
+    imagem = imagem.resize((170, 170))
+    imagem = ImageTk.PhotoImage(imagem)
+
+    l_imagem = Label(frameMeio, image=imagem,bg=co1, fg=co4 )
+    l_imagem.place(x=700, y=10)
+
+
 
 # percentagem ---------------------------
 
@@ -85,8 +239,6 @@ def percentagem():
     print(valor)
     l_percentagem = Label(frameMeio, text='{:,.2f} %'.format(valor), height=1, anchor=NW, font=('Verdana 12 '), bg=co1, fg=co4)
     l_percentagem.place(x=200, y=35)
-
-percentagem()
 
 
 # funcao para grafico bar ---------------
@@ -130,8 +282,6 @@ def grafico_bar():
     canva = FigureCanvasTkAgg(figura, frameMeio)
     canva.get_tk_widget().place(x=10, y=70)
 
-grafico_bar()
-
 
 # --------------------------------------------------------
 # funcao de resumo total
@@ -160,7 +310,6 @@ def resumo():
     l_sumario = Label(frameMeio, text='R$ {:,.2f}'.format(valor[2]), height=1,anchor=NW, font=('arial 17 '), bg=co1, fg='#545454')
     l_sumario.place(x=306, y=220)
 
-resumo()
 
 
 # -----------------------------------------------------------
@@ -175,6 +324,7 @@ def grafico_pie():
 
     # only "explode" the 2nd slice (i.e. 'Hogs')
     explode = []
+
     for i in lista_categorias:
         explode.append(0.05)
     ax.pie(lista_valores, explode=explode, wedgeprops=dict(width=0.2), autopct='%1.1f%%', colors=colors,shadow=True, startangle=90)
@@ -182,8 +332,6 @@ def grafico_pie():
 
     canva_categoria = FigureCanvasTkAgg(figura, frame_gra_2)
     canva_categoria.get_tk_widget().grid(row=0,column=0)
-
-grafico_pie()
 
 
 # ---------- criando frames para tabelas --------------------
@@ -236,8 +384,6 @@ def mostrar_renda():
 
     for item in lista_itens:
         tree.insert('', 'end', values=item)
-
-mostrar_renda()
 
 
 # Configuracoes Despesas -----------------------------------
@@ -328,6 +474,13 @@ botao_inserir_categoria = Button(frame_configuracao,image=img_add_categoria, com
 botao_inserir_categoria.place(x=110, y=190)
 
 
+
+
+percentagem()
+grafico_bar()
+resumo()
+grafico_pie()
+mostrar_renda()
 
 
 janela.mainloop()
