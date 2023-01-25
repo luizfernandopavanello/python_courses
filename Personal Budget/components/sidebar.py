@@ -25,10 +25,10 @@ layout = dbc.Col([
 # === Seção NOVO === #
                 dbc.Row([
                     dbc.Col([
-                        dbc.Button(color='success', id='open-novo-receita', childdren=['+ Receita'])
+                        dbc.Button(color='success', id='open-novo-receita', children=['+ Receita'])
                     ], width=6),
                     dbc.Col([
-                        dbc.Button(color='danger', id='open-novo-despesa', childdren=['- Despesa'])
+                        dbc.Button(color='danger', id='open-novo-despesa', children=['- Despesa'])
                     ], width=6),
                 ]),
 
