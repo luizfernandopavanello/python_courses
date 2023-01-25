@@ -6,8 +6,7 @@ import pandas as pd
 import plotly.express as px
 
 from app import *
-from components import sidebar
-
+from components import sidebar, dashboards, extratos
 
 
 # =========  Layout  =========== #
@@ -19,15 +18,22 @@ app.layout = dbc.Container(children=[
         dbc.Col([
             dcc.Location(id='url'),
             sidebar.layout
-        ])
+        ], md=2),
+        dbc.Col([
+            content
+        ], md=10)
     ])
-
-
-
 
 ], fluid=True,)
 
 
+@app.callback(Output('page-content', 'children'), [Input('url', 'pathname')])
+def render_page(pathname):
+    if pathname == '/' or pathname == '/pathname':
+        return dashboards.layout
+    
+    if pathname == '/extratos':
+        return extratos.layout
 
 
 if __name__ == '__main__':
