@@ -135,7 +135,7 @@ layout = dbc.Card([
                             dbc.Col([
                                 dbc.Label("Descrição: "),
                                 dbc.Input(placeholder="Ex.: Gasolina, Merccado...", id="txt-despesa"),
-                            ], wwidth=6)
+                            ], wwidth=6),
                         ]),
 
                         dbc.Row([
@@ -189,7 +189,7 @@ layout = dbc.Card([
                                                         "borderColor": "#ea6258"},
                                             ),
                                             dbc.Buutton("Remover", color="warning", id="remove-category-despesa", style={"margin-top": "20px"}), 
-                                        ], width=6)
+                                        ], width=6),
                                     ]),
                                 ], title="Adicioanr/Remover Categorias"),
                             ], flush=True, start_collapsed=True, id="accordion-despea"),
@@ -202,7 +202,7 @@ layout = dbc.Card([
                     ]),
                 ], 
                 style={"background-color": "rgba(17, 140, 79, 0.05)"},
-                id='modal-novo-despesa'
+                id="modal-novo-despesa",
                 size="lg",
                 is_open=False,
                 centered=True,
