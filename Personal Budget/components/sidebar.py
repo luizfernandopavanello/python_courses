@@ -270,7 +270,7 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_rece
         valor = round(float(valor), 2)
         date = pd.to_datetime(date).date()
         categoria = categoria[0] if type(categoria) == list else categoria
-        
+
         recebido = 1 if 1 in switches else 0
         fixo = 1 if 2 in switches else 0
 
@@ -278,4 +278,37 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_rece
         df_receitas.to_csv("df_receitas.csv")
 
     data_return = df_receitas.to_dict()
+    return data_return
+
+
+# Enviar Form despesa
+@app.callback(
+    Output('store-despesas', 'data'),
+    Input("salvar_despesa", "n_clicks"),
+    [
+        State("valor_despesa", "value"),
+        State("switches-input-despesa", "value"),
+        State("select_despesa", "value"),
+        State("date-despesas", "date"),
+        State("txt-despesa", "value"),
+        State('store-despesas', 'data')
+    ])
+def salve_form_despesa(n, valor, switches, descricao, date, txt, dict_despesas):
+    df_despesas = pd.DataFrame(dict_despesas)
+
+    if n and not(valor == "" or valor== None):
+        valor = round(valor, 2)
+        date = pd.to_datetime(date).date()
+        categoria = categoria[0] if type(categoria) == list else categoria
+
+        recebido = 1 if 1 in switches else 0
+        fixo = 0 if 2 in switches else 0
+        
+        if descricao == None or descricao == "":
+            descricao = 0
+
+        df_despesas.loc[df_despesas.shape[0]] = [valor, recebido, fixo, date, descricao, txt]
+        df_despesas.to_csv("df_despesas.csv")
+
+    data_return = df_despesas.to_dict()
     return data_return
