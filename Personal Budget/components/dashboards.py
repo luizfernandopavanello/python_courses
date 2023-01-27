@@ -124,3 +124,54 @@ layout = dbc.Col([
 
 
 # =========  Callbacks  =========== #
+# Dropdown Receita
+@app.callback(
+    [
+        Output('dropdown-receita', 'options'),
+        Output('dropdown-receita', 'value'),
+        Output('p-receita-dashboards', 'children')
+    ],
+    Input('store-receitas', 'data')
+)
+def populate_dropdownvalues(data):
+    df = pd.DataFrame(data)
+    valor = df['Valor'].sum()
+    val = df.Categoria.unique().tolist()
+
+    return [([{'label': x, "value": x} for x in df.Categoria.unique()]), val, f"R$ {valor}"]
+
+
+# Dropdown Despesa
+@app.callback(
+    [
+        Output('dropdown-despesa', 'options'),
+        Output('dropdown-despesa', 'value'),
+        Output('p-despesa-dashboards', 'children')
+    ],
+    Input('store-despesa', 'data')
+)
+def populate_dropdownvalues(data):
+    df = pd.DataFrame(data)
+    valor = df['Valor'].sum()
+    val = df.Categoria.unique().tolist()
+
+    return [([{'label': x, "value": x} for x in df.Categoria.unique()]), val, f"R$ {valor}"]
+
+
+# === VALOR - saldo === #
+app.callback(
+    Output('p-saldo-dashboards', 'children'),
+    [
+        Input('store-despesas', 'data'),
+        Input('store-receitas', 'data')
+    ]
+)
+def saldo_total(despesas, receitas):
+    df_despesas = pd.DataFrame(despesas)
+    df_receitas = pd.DataFrame(receitas)
+
+    valor = df_receitas['Valor'].sum() - df_despesas['Valor'].sum()
+
+    return f"R$ {valor}"
+
+
