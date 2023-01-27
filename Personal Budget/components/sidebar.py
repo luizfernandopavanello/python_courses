@@ -247,6 +247,17 @@ def toggle_modal(n1, is_open):
         return not is_open
 
 
+# Pop-up perfis
+@app.callback(
+    Output("modal-perfil", "is_open"),
+    Input("botao_avatar", "n_clicks"),
+    State("modal-perfil", "is_open")
+)
+def toggle_modal(n1, is_open):
+    if n1:
+        return not is_open 
+
+
 # Add / Remove categoria Despesa
 @app.callback(
     [
