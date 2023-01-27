@@ -10,7 +10,7 @@ import plotly.express as px
 import numpy as np
 import pandas as pd
 
-
+from globals import *
 
 # ========= Layout ========= #
 layout = dbc.Card([
@@ -76,7 +76,9 @@ layout = dbc.Card([
 
                                 dbc.Col([
                                     html.Label("Categoria da receita"),
-                                    dbc.Select(id="select_receita", options=[], value=[])
+                                    dbc.Select(id="select_receita", 
+                                        options=[{'label': i, 'value': i} for i in cat_receita], 
+                                        value=cat_receita[0])
                                 ], width=4)
                             ], style={"margin-top": "25px"}),
                             
@@ -152,8 +154,9 @@ layout = dbc.Card([
                             dbc.Col([
                                 dbc.Label("Opções Extras"),
                                 dbc.Checklist(
-                                    options=[],
-                                    value=[],
+                                    options=[{"label": "Foi recebida", "value": 1}, 
+                                        {"label": "Receita Recorrente", "value": 2}],
+                                    value=[1],
                                     id='switches-input-despesa',
                                     switch=True
                                 ),
@@ -161,8 +164,10 @@ layout = dbc.Card([
 
                             dbc.Col([
                                 html.Label("Categoria da despesa"),
-                                dbc.Select(id="select_despesa", options=[])
-                            ], wwidth=4),
+                                dbc.Select(id="select_despesa", 
+                                    options=[{'label': i, 'value': i} for i in cat_despesa], 
+                                    value=cat_despesa[0])
+                            ], width=4),
                         ], style={"margin-top": "25px"}),
 
                         dbc.Row([
@@ -240,3 +245,22 @@ def toggle_modal(n1, is_open):
 def toggle_modal(n1, is_open):
     if n1:
         return not is_open
+
+
+@app.callback(
+    Output('store-receitas', 'data'),
+    Input('salvar_receita', 'n_clicks'),
+    [
+        State('txt-receita', 'value'),
+        State('valor_receita', 'value'),
+        State('date-receitas', 'date'),
+        State('switches-input-receita', 'value'),
+        State('select_receita', 'value'),
+        State('store-receitas', 'data')
+    ]
+)
+def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_receitas):
+    # import pdb
+    # pdb.set_trace()
+    
+    return {}
